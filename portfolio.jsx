@@ -33,7 +33,8 @@ const PROJECTS = [
     year: "2024",
     role: "Identity · Packaging",
     blurb: "A coastal seafood restaurant in Lisbon.",
-    bg: "#EBD0CD"
+    bg: "#EBD0CD",
+    img: "assets/box.jpeg"
   },
   {
     n: "03",
@@ -42,7 +43,8 @@ const PROJECTS = [
     year: "2024",
     role: "Editorial · Print",
     blurb: "Independent design quarterly, four issues a year.",
-    bg: "#E5BFC4"
+    bg: "#E5BFC4",
+    img: "assets/tube.jpeg"
   },
   {
     n: "04",
@@ -51,7 +53,8 @@ const PROJECTS = [
     year: "2025",
     role: "Type Design",
     blurb: "A modular variable typeface for screens.",
-    bg: "#D8AAB1"
+    bg: "#D8AAB1",
+    img: "assets/lunelle-box.png"
   }
 ];
 
@@ -278,12 +281,8 @@ function CaseStudy() {
       </div>
 
       <div className="case-hero" data-reveal>
-        <div className="placeholder">
-          <div className="ph-top">
-            <span>Hero image</span>
-            <span>16:9 · 2400 × 1350</span>
-          </div>
-          <div className="ph-bottom">Sirena — identity reveal</div>
+        <div className="case-img-main">
+          <img src="assets/box.jpeg" alt="Sirena identity" />
         </div>
       </div>
 
@@ -304,15 +303,13 @@ function CaseStudy() {
 
       <div className="case-gallery" data-reveal>
         <div>
-          <div className="placeholder">
-            <div className="ph-top"><span>Detail</span><span>3:2</span></div>
-            <div className="ph-bottom">Menu · interior spreads</div>
+          <div className="case-img-detail">
+            <img src="assets/tube.jpeg" alt="Menu detail" />
           </div>
         </div>
         <div>
-          <div className="placeholder">
-            <div className="ph-top"><span>Detail</span><span>3:2</span></div>
-            <div className="ph-bottom">Wine label series</div>
+          <div className="case-img-detail">
+            <img src="assets/lunelle-rectangle.png" alt="Wine label series" />
           </div>
         </div>
       </div>
@@ -330,9 +327,8 @@ function About() {
 
       <div className="about-grid">
         <div className="about-portrait" data-reveal>
-          <div className="placeholder">
-            <div className="ph-top"><span>Portrait</span><span>4:5</span></div>
-            <div className="ph-bottom">Studio · 2026</div>
+          <div className="about-img">
+            <img src="assets/lunelle.png" alt="Aditi Gautam Studio" />
           </div>
         </div>
 
