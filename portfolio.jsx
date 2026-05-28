@@ -141,7 +141,7 @@ function useReveal() {
 function Nav() {
   return (
     <nav className="nav">
-      <div className="nav-mark">Aditi M. — Designer</div>
+      <div className="nav-mark">Aditi Gautam — Designer</div>
       <div className="nav-links">
         <a href="#work">Work</a>
         <a href="#case">Case</a>
@@ -149,7 +149,7 @@ function Nav() {
         <a href="#contact">Contact</a>
       </div>
       <div className="nav-end">
-        <span>© 2026 / Lagos ⟶ Berlin</span>
+        <span>© 2026 / Delhi ⟶ India</span>
       </div>
     </nav>
   );
@@ -169,7 +169,7 @@ function Hero() {
       </div>
 
       <h1 className="hero-title" data-reveal data-reveal-delay="2">
-        Aditi<em>—</em>
+        Aditi Gautam<em>—</em>
       </h1>
 
       <div className="hero-bottom">
@@ -337,7 +337,7 @@ function About() {
         </div>
 
         <div className="about-body" data-reveal data-reveal-delay="1">
-          <p>I'm <em>Aditi</em> — a graphic designer based between Lagos and Berlin, working with restaurants, magazines, and small cultural institutions.</p>
+          <p>I'm <em>Aditi Gautam</em> — a graphic designer based in Delhi, India, working with restaurants, magazines, and small cultural institutions.</p>
           <p>My practice sits at the seam between editorial design and identity: rigorous grids, drawn type, and a slight allergy to anything that looks like a template.</p>
           <p>I take on three to four projects a year, prefer long collaborations, and answer email between coffees.</p>
 
@@ -403,8 +403,8 @@ function Footer() {
   }, []);
   return (
     <footer className="footer">
-      <div>© 2026 Aditi M.</div>
-      <div className="center">Berlin · {time} · GMT+1</div>
+      <div>© 2026 Aditi Gautam</div>
+      <div className="center">Delhi · {time} · GMT+5:30</div>
       <div>Built quietly</div>
     </footer>
   );
