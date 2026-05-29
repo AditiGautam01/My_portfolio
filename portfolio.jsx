@@ -376,7 +376,7 @@ function CaseStudy({ project }) {
       <div className="case-gallery" data-reveal>
         {d.gallery.map((img, i) => (
           <div key={i}>
-            <div className="case-img-detail" style={{ background: project.bg, opacity: 0.8 }}>
+            <div className="case-img-detail">
               {img && !img.includes("placeholder") ? (
                 <img src={img} alt={`${project.name} detail ${i+1}`} />
               ) : (

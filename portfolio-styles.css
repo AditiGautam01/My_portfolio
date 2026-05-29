@@ -336,7 +336,7 @@ body.is-hover .cursor-dot { width: 4px; height: 4px; }
 .case-img-main img { width: 100%; height: 100%; object-fit: cover; }
 
 .case-img-detail {
-  width: 100%; aspect-ratio: 3/2;
+  width: 100%; height: 100%;
   border-radius: 4px; overflow: hidden;
   box-shadow: var(--shadow);
 }
