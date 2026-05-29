@@ -41,7 +41,26 @@ const PROJECTS = [
     role: "Identity · Packaging",
     blurb: "A coastal seafood restaurant in Lisbon.",
     bg: "#EBD0CD",
-    img: "assets/box.jpeg"
+    img: "assets/box.jpeg",
+    caseData: {
+      title: "Sirena, ",
+      italicTitle: "a coastal table.",
+      blurb: "A neighbourhood seafood restaurant in Alfama. The identity reads as half-menu, half-letter from the sea — a typographic system that flexes between handwritten warmth and printed authority.",
+      client: "Sirena Lisboa",
+      year: "2024",
+      role: "Identity, Packaging, Art Direction",
+      collaborators: "S. Patel (photo), L. Ortega (copy)",
+      recognition: "Brand New, June 2024",
+      body: [
+        "Sirena opened in a former chandlery near the river. The owners wanted something that felt like the building itself: a little weathered, a little ceremonial, generous without being precious.",
+        "We drew a custom display cut from old market signage — wide, slightly humanist — and paired it with a workhorse mono for menus, receipts, and the inevitable handwritten specials board. The palette pulls from oxidised brass and bleached linen.",
+        "A single rule shaped every decision: the system should be photocopy-proof. Faxed, smudged, stamped on butcher paper — it still has to sing."
+      ],
+      gallery: [
+        "assets/tube.jpeg",
+        "assets/lunelle-rectangle.png"
+      ]
+    }
   },
   {
     n: "03",
@@ -62,6 +81,93 @@ const PROJECTS = [
     blurb: "A modular variable typeface for screens.",
     bg: "#D8AAB1",
     img: "assets/lunelle-box.png"
+  },
+  {
+    n: "05",
+    name: "Strategy Deck",
+    italic: "Deck",
+    year: "2026",
+    role: "Presentation Design · Systems",
+    blurb: "Redesigned a 32-slide internal strategy deck to improve stakeholder readability.",
+    bg: "#E8E6E1",
+    img: "assets/deck-placeholder.png",
+    caseData: {
+      title: "Strategy Deck, ",
+      italicTitle: "redesigned.",
+      blurb: "Redesigned a 32-slide internal strategy deck to improve stakeholder readability — reduced average slide text by 60%, introduced a custom icon set, and unified the visual system across sections.",
+      client: "Internal Strategy Team",
+      year: "2026",
+      role: "Solo Designer",
+      collaborators: "Strategy Consultants",
+      recognition: "Internal Excellence Award",
+      body: [
+        "The problem: A typical data-heavy corporate deck with dense text, default charts, and no visual hierarchy.",
+        "The solution focused on improving stakeholder readability by establishing a clear hierarchy, utilizing custom icons, and simplifying complex charts. The typography-forward approach ensured the content remained the hero without feeling overly corporate.",
+        "A unified visual system was applied across all 32 slides, ensuring consistency in spacing, color usage, and data presentation. The result was a significantly more engaging and legible document for executive review."
+      ],
+      gallery: [
+        "assets/lunelle-box-v6.png",
+        "assets/lunelle-box-new.png"
+      ]
+    }
+  },
+  {
+    n: "06",
+    name: "Life Sciences Visual",
+    italic: "Visual",
+    year: "2026",
+    role: "Information Design · Data Viz",
+    blurb: "Visualised a 6-stage clinical trial process for a non-technical audience.",
+    bg: "#D9DFE3",
+    img: "assets/infographic-placeholder.png",
+    caseData: {
+      title: "Clinical Trial, ",
+      italicTitle: "visualised.",
+      blurb: "Visualised a 6-stage clinical trial process for a non-technical audience — distilling 12 pages of documentation into a single navigable visual.",
+      client: "Pharmaceutical Client",
+      year: "2026",
+      role: "Solo Designer",
+      collaborators: "Medical Writers",
+      recognition: "Client Commendation",
+      body: [
+        "The problem: Complex clinical trial documentation that was difficult for non-technical stakeholders to digest.",
+        "I distilled 12 pages of dense medical documentation into a single, cohesive single-page infographic. The visual story navigates the viewer through the 6-stage process using a clean, editorial aesthetic, avoiding the visual clutter typical of standard corporate infographics.",
+        "By focusing on clarity and flow, the infographic transformed a technical bottleneck into a communication asset that could be used across multiple departments and stakeholder meetings."
+      ],
+      gallery: [
+        "assets/lunelle-box.png",
+        "assets/niacinamide-lotion.png"
+      ]
+    }
+  },
+  {
+    n: "07",
+    name: "Industry Summit",
+    italic: "Summit",
+    year: "2026",
+    role: "Identity · Collateral · Print",
+    blurb: "Designed end-to-end event collateral for a 200-person industry summit.",
+    bg: "#E3D5CA",
+    img: "assets/event-placeholder.png",
+    caseData: {
+      title: "Industry Summit, ",
+      italicTitle: "identity.",
+      blurb: "Designed end-to-end event collateral for a 200-person industry summit — identity, print materials, and digital assets.",
+      client: "Global Tech Summit",
+      year: "2026",
+      role: "Solo Designer",
+      collaborators: "Event Management Team",
+      recognition: "Best Event Branding 2026",
+      body: [
+        "The problem: Creating a cohesive identity and collateral set for a major 200-person industry summit that didn't feel like a standard corporate event.",
+        "I designed a complete collateral set including a save-the-date, banner, name badge, and a one-pager. The identity maintained the studio's typography-forward, quiet aesthetic while fulfilling all business communication requirements.",
+        "The project demonstrated breadth across physical and digital touchpoints, ensuring a unified attendee experience from the initial invitation to the on-site environment."
+      ],
+      gallery: [
+        "assets/lunelle-box-v6.png",
+        "assets/box.jpeg"
+      ]
+    }
   }
 ];
 
@@ -221,27 +327,31 @@ function Marquee() {
   );
 }
 
-function Work() {
+function Work({ onSelectProject, selectedId }) {
   const [expandedRow, setExpandedRow] = useState(null);
 
   return (
     <section id="work" className="section container">
       <div className="section-head" data-reveal>
         <h2 className="section-title">Selected <em>work.</em></h2>
-        <div className="section-meta">04 · Projects</div>
+        <div className="section-meta">07 · Projects</div>
       </div>
 
       <div className="work-list">
         {PROJECTS.map((p, i) => {
           const isExpanded = expandedRow === p.n;
+          const isSelected = selectedId === p.n;
           const Tag = p.isCatalog ? "div" : "a";
           
           return (
             <div key={p.n} data-reveal data-reveal-delay={i}>
               <Tag
                 href={!p.isCatalog ? "#case" : undefined}
-                className={`work-row ${p.isCatalog ? "is-catalog" : ""} ${isExpanded ? "is-active" : ""}`}
-                onClick={p.isCatalog ? () => setExpandedRow(isExpanded ? null : p.n) : undefined}
+                className={`work-row ${p.isCatalog ? "is-catalog" : ""} ${isExpanded || isSelected ? "is-active" : ""}`}
+                onClick={p.isCatalog 
+                  ? () => setExpandedRow(isExpanded ? null : p.n) 
+                  : () => onSelectProject(p.n)
+                }
               >
                 <div className="num">{p.n}</div>
                 <div className="name">{p.name}</div>
@@ -274,51 +384,63 @@ function Work() {
   );
 }
 
-function CaseStudy() {
+function CaseStudy({ project }) {
+  if (!project || !project.caseData) return null;
+  const d = project.caseData;
+
   return (
     <section id="case" className="section container case">
       <div className="case-head" data-reveal>
         <div>
-          <div className="case-eyebrow"><span className="mono-eyebrow"><span className="dot"></span>Case · 01</span></div>
-          <h2 className="case-title">Sirena, <em>a coastal table.</em></h2>
+          <div className="case-eyebrow"><span className="mono-eyebrow"><span className="dot"></span>Case · {project.n}</span></div>
+          <h2 className="case-title">{d.title}<em>{d.italicTitle}</em></h2>
         </div>
         <p className="case-blurb">
-          A neighbourhood seafood restaurant in Alfama. The identity reads as half-menu, half-letter from the sea — a typographic system that flexes between handwritten warmth and printed authority.
+          {d.blurb}
         </p>
       </div>
 
       <div className="case-hero" data-reveal>
-        <div className="case-img-main">
-          <img src="assets/box.jpeg" alt="Sirena identity" />
+        <div className="case-img-main" style={{ background: project.bg }}>
+          {project.img && !project.img.includes("placeholder") ? (
+            <img src={project.img} alt={project.name} />
+          ) : (
+            <div className="placeholder">
+              <div className="ph-top"><span>Project {project.n}</span><span>{project.year}</span></div>
+              <div className="ph-bottom">{project.name} — Image Pending</div>
+            </div>
+          )}
         </div>
       </div>
 
       <div className="case-grid" data-reveal>
         <dl>
-          <div><dt>Client</dt><dd>Sirena Lisboa</dd></div>
-          <div><dt>Year</dt><dd>2024</dd></div>
-          <div><dt>Role</dt><dd>Identity, Packaging, Art Direction</dd></div>
-          <div><dt>Collaborators</dt><dd>S. Patel (photo), L. Ortega (copy)</dd></div>
-          <div><dt>Recognition</dt><dd>Brand New, June 2024</dd></div>
+          <div><dt>Client</dt><dd>{d.client}</dd></div>
+          <div><dt>Year</dt><dd>{d.year || project.year}</dd></div>
+          <div><dt>Role</dt><dd>{d.role}</dd></div>
+          <div><dt>Collaborators</dt><dd>{d.collaborators}</dd></div>
+          <div><dt>Recognition</dt><dd>{d.recognition}</dd></div>
         </dl>
         <div className="body">
-          <p>Sirena opened in a former chandlery near the river. The owners wanted something that felt like the building itself: a little weathered, a little ceremonial, generous without being precious.</p>
-          <p>We drew a custom display cut from old market signage — wide, slightly humanist — and paired it with a workhorse mono for menus, receipts, and the inevitable handwritten specials board. The palette pulls from oxidised brass and bleached linen.</p>
-          <p>A single rule shaped every decision: the system should be photocopy-proof. Faxed, smudged, stamped on butcher paper — it still has to sing.</p>
+          {d.body.map((p, i) => <p key={i}>{p}</p>)}
         </div>
       </div>
 
       <div className="case-gallery" data-reveal>
-        <div>
-          <div className="case-img-detail">
-            <img src="assets/tube.jpeg" alt="Menu detail" />
+        {d.gallery.map((img, i) => (
+          <div key={i}>
+            <div className="case-img-detail" style={{ background: project.bg, opacity: 0.8 }}>
+              {img && !img.includes("placeholder") ? (
+                <img src={img} alt={`${project.name} detail ${i+1}`} />
+              ) : (
+                <div className="placeholder">
+                  <div className="ph-top"><span>Detail {i+1}</span></div>
+                  <div className="ph-bottom">Coming soon</div>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-        <div>
-          <div className="case-img-detail">
-            <img src="assets/lunelle-rectangle.png" alt="Wine label series" />
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
@@ -416,6 +538,7 @@ function Footer() {
 // ---------- App ----------
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [selectedProjectId, setSelectedProjectId] = useState("02"); // Default to Sirena
 
   useEffect(() => {
     document.documentElement.style.setProperty("--accent", t.accent);
@@ -440,6 +563,8 @@ function App() {
 
   useReveal();
 
+  const selectedProject = PROJECTS.find(p => p.n === selectedProjectId);
+
   return (
     <>
       <Curtain />
@@ -447,8 +572,8 @@ function App() {
       <Nav />
       <Hero />
       <Marquee />
-      <Work />
-      <CaseStudy />
+      <Work onSelectProject={setSelectedProjectId} selectedId={selectedProjectId} />
+      <CaseStudy project={selectedProject} />
       <About />
       <Contact />
       <Footer />
