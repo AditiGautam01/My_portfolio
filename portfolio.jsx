@@ -35,55 +35,6 @@ const PROJECTS = [
   },
   {
     n: "02",
-    name: "Sirena",
-    italic: "Sirena",
-    year: "2024",
-    role: "Identity · Packaging",
-    blurb: "A coastal seafood restaurant in Lisbon.",
-    bg: "#EBD0CD",
-    img: "assets/box.jpeg",
-    caseData: {
-      title: "Sirena, ",
-      italicTitle: "a coastal table.",
-      blurb: "A neighbourhood seafood restaurant in Alfama. The identity reads as half-menu, half-letter from the sea — a typographic system that flexes between handwritten warmth and printed authority.",
-      client: "Sirena Lisboa",
-      year: "2024",
-      role: "Identity, Packaging, Art Direction",
-      collaborators: "S. Patel (photo), L. Ortega (copy)",
-      recognition: "Brand New, June 2024",
-      body: [
-        "Sirena opened in a former chandlery near the river. The owners wanted something that felt like the building itself: a little weathered, a little ceremonial, generous without being precious.",
-        "We drew a custom display cut from old market signage — wide, slightly humanist — and paired it with a workhorse mono for menus, receipts, and the inevitable handwritten specials board. The palette pulls from oxidised brass and bleached linen.",
-        "A single rule shaped every decision: the system should be photocopy-proof. Faxed, smudged, stamped on butcher paper — it still has to sing."
-      ],
-      gallery: [
-        "assets/tube.jpeg",
-        "assets/lunelle-rectangle.png"
-      ]
-    }
-  },
-  {
-    n: "03",
-    name: "Folio Quarterly",
-    italic: "Folio",
-    year: "2024",
-    role: "Editorial · Print",
-    blurb: "Independent design quarterly, four issues a year.",
-    bg: "#E5BFC4",
-    img: "assets/tube.jpeg"
-  },
-  {
-    n: "04",
-    name: "Lumen Type",
-    italic: "Lumen",
-    year: "2025",
-    role: "Type Design",
-    blurb: "A modular variable typeface for screens.",
-    bg: "#D8AAB1",
-    img: "assets/lunelle-box.png"
-  },
-  {
-    n: "05",
     name: "Strategy Deck",
     italic: "Deck",
     year: "2026",
@@ -112,7 +63,7 @@ const PROJECTS = [
     }
   },
   {
-    n: "06",
+    n: "03",
     name: "Life Sciences Visual",
     italic: "Visual",
     year: "2026",
@@ -141,7 +92,7 @@ const PROJECTS = [
     }
   },
   {
-    n: "07",
+    n: "04",
     name: "Industry Summit",
     italic: "Summit",
     year: "2026",
@@ -334,7 +285,7 @@ function Work({ onSelectProject, selectedId }) {
     <section id="work" className="section container">
       <div className="section-head" data-reveal>
         <h2 className="section-title">Selected <em>work.</em></h2>
-        <div className="section-meta">07 · Projects</div>
+        <div className="section-meta">04 · Projects</div>
       </div>
 
       <div className="work-list">
@@ -462,8 +413,8 @@ function About() {
         </div>
 
         <div className="about-body" data-reveal data-reveal-delay="1">
-          <p>I'm <em>Aditi Gautam</em> — a graphic designer based in Delhi, India, working with restaurants, magazines, and small cultural institutions.</p>
-          <p>My practice sits at the seam between editorial design and identity: rigorous grids, drawn type, and a slight allergy to anything that looks like a template.</p>
+          <p>I'm <em>Aditi Gautam</em> — a graphic designer based in Delhi, India, working with corporate strategy teams, healthcare institutions, and cultural organizations.</p>
+          <p>My practice sits at the seam between information design and identity: rigorous grids, clear data visualization, and a slight allergy to anything that looks like a template.</p>
           <p>I take on three to four projects a year, prefer long collaborations, and answer email between coffees.</p>
 
           <div className="about-lists">
@@ -471,17 +422,17 @@ function About() {
               <h4>Services</h4>
               <ul>
                 <li><span>Identity systems</span><span>01</span></li>
-                <li><span>Editorial design</span><span>02</span></li>
-                <li><span>Art direction</span><span>03</span></li>
-                <li><span>Type design</span><span>04</span></li>
+                <li><span>Presentation design</span><span>02</span></li>
+                <li><span>Data visualization</span><span>03</span></li>
+                <li><span>Editorial design</span><span>04</span></li>
                 <li><span>Print supervision</span><span>05</span></li>
               </ul>
             </div>
             <div>
               <h4>Selected clients</h4>
               <ul>
-                <li><span>Sirena Lisboa</span><span>'24</span></li>
-                <li><span>Folio Quarterly</span><span>'24</span></li>
+                <li><span>Pharmaceutical Client</span><span>'26</span></li>
+                <li><span>Global Tech Summit</span><span>'26</span></li>
                 <li><span>Tate Modern</span><span>'23</span></li>
                 <li><span>MUBI</span><span>'23</span></li>
                 <li><span>Stripe Press</span><span>'22</span></li>
@@ -538,7 +489,7 @@ function Footer() {
 // ---------- App ----------
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-  const [selectedProjectId, setSelectedProjectId] = useState("02"); // Default to Sirena
+  const [selectedProjectId, setSelectedProjectId] = useState("02"); // Default to Strategy Deck
 
   useEffect(() => {
     document.documentElement.style.setProperty("--accent", t.accent);
