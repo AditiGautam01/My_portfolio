@@ -35,30 +35,30 @@ const PROJECTS = [
   },
   {
     n: "02",
-    name: "Strategy Deck",
-    italic: "Deck",
+    name: "Why Gen Z Chooses Sustainable Skincare",
+    italic: "Gen Z",
     year: "2026",
-    role: "Presentation Design · Systems",
-    blurb: "Redesigned a 32-slide internal strategy deck to improve stakeholder readability.",
+    role: "Presentation Design | Information Design | Visual Storytelling",
+    blurb: "A consulting-style presentation exploring the factors influencing Gen Z skincare purchasing decisions.",
     bg: "#E8E6E1",
-    img: "assets/deck-placeholder.png",
+    img: "assets/genz-skincare-cover.png",
     caseData: {
-      title: "Strategy Deck, ",
-      italicTitle: "redesigned.",
-      blurb: "Redesigned a 32-slide internal strategy deck to improve stakeholder readability — reduced average slide text by 60%, introduced a custom icon set, and unified the visual system across sections.",
-      client: "Internal Strategy Team",
+      title: "Gen Z Skincare, ",
+      italicTitle: "visualised.",
+      blurb: "A consulting-style presentation exploring the factors influencing Gen Z skincare purchasing decisions. The project demonstrates data visualization, business storytelling, infographic design, layout systems, and presentation design skills.",
+      client: "Consulting Case Study",
       year: "2026",
       role: "Solo Designer",
-      collaborators: "Strategy Consultants",
-      recognition: "Internal Excellence Award",
+      collaborators: "Market Research Team",
+      recognition: "Portfolio Excellence",
       body: [
-        "The problem: A typical data-heavy corporate deck with dense text, default charts, and no visual hierarchy.",
-        "The solution focused on improving stakeholder readability by establishing a clear hierarchy, utilizing custom icons, and simplifying complex charts. The typography-forward approach ensured the content remained the hero without feeling overly corporate.",
-        "A unified visual system was applied across all 32 slides, ensuring consistency in spacing, color usage, and data presentation. The result was a significantly more engaging and legible document for executive review."
+        "The project explores the intersection of sustainability and Gen Z consumer behavior in the skincare industry. The objective was to translate complex market data into a compelling visual narrative suitable for high-level consulting stakeholders.",
+        "Key insight slides were designed with a focus on visual hierarchy and clarity. Data visualization slides prominently feature simplified charts and custom graphics that highlight core trends without overwhelming the audience.",
+        "The final recommendation slide serves as the outcome, presenting actionable strategies through a modern, professional aesthetic aligned with top-tier consulting firms like ZS, Deloitte, and McKinsey."
       ],
       gallery: [
-        "assets/lunelle-box-v6.png",
-        "assets/lunelle-box-new.png"
+        "assets/genz-skincare-insights.png",
+        "assets/genz-skincare-data.png"
       ]
     }
   },
@@ -483,7 +483,7 @@ function Footer() {
 // ---------- App ----------
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-  const [selectedProjectId, setSelectedProjectId] = useState("02"); // Default to Strategy Deck
+  const [selectedProjectId, setSelectedProjectId] = useState("02"); // Default to Gen Z Skincare Case Study
 
   useEffect(() => {
     document.documentElement.style.setProperty("--accent", t.accent);
