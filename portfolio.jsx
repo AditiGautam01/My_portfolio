@@ -279,8 +279,6 @@ function Marquee() {
 }
 
 function Work({ onSelectProject, selectedId }) {
-  const [expandedRow, setExpandedRow] = useState(null);
-
   return (
     <section id="work" className="section container">
       <div className="section-head" data-reveal>
@@ -290,7 +288,6 @@ function Work({ onSelectProject, selectedId }) {
 
       <div className="work-list">
         {PROJECTS.map((p, i) => {
-          const isExpanded = expandedRow === p.n;
           const isSelected = selectedId === p.n;
           const Tag = p.isCatalog ? "div" : "a";
           
@@ -298,11 +295,8 @@ function Work({ onSelectProject, selectedId }) {
             <div key={p.n} data-reveal data-reveal-delay={i}>
               <Tag
                 href={!p.isCatalog ? "#case" : undefined}
-                className={`work-row ${p.isCatalog ? "is-catalog" : ""} ${isExpanded || isSelected ? "is-active" : ""}`}
-                onClick={p.isCatalog 
-                  ? () => setExpandedRow(isExpanded ? null : p.n) 
-                  : () => onSelectProject(p.n)
-                }
+                className={`work-row ${p.isCatalog ? "is-catalog" : ""} ${isSelected ? "is-active" : ""}`}
+                onClick={p.isCatalog ? undefined : () => onSelectProject(p.n)}
               >
                 <div className="num">{p.n}</div>
                 <div className="name">{p.name}</div>
@@ -312,7 +306,7 @@ function Work({ onSelectProject, selectedId }) {
                 </div>
               </Tag>
 
-              {p.isCatalog && isExpanded && (
+              {p.isCatalog && (
                 <div className="catalog-grid">
                   {p.items.map((item, idx) => (
                     <div key={idx} className="catalog-item">
