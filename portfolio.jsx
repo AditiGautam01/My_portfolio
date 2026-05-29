@@ -40,8 +40,8 @@ const PROJECTS = [
     year: "2026",
     role: "Presentation Design | Information Design | Visual Storytelling",
     blurb: "A consulting-style presentation exploring the factors influencing Gen Z skincare purchasing decisions.",
-    bg: "#E8E6E1",
-    img: "assets/genz-skincare-cover.png",
+    bg: "#E2EFDA",
+    img: "assets/genz-skincare-1.png",
     caseData: {
       title: "Gen Z Skincare, ",
       italicTitle: "visualised.",
@@ -57,8 +57,10 @@ const PROJECTS = [
         "The final recommendation slide serves as the outcome, presenting actionable strategies through a modern, professional aesthetic aligned with top-tier consulting firms like ZS, Deloitte, and McKinsey."
       ],
       gallery: [
-        "assets/genz-skincare-insights.png",
-        "assets/genz-skincare-data.png"
+        "assets/genz-skincare-2.png",
+        "assets/genz-skincare-3.png",
+        "assets/genz-skincare-4.png",
+        "assets/genz-skincare-5.png"
       ]
     }
   },

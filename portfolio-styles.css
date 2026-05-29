@@ -410,10 +410,10 @@ body.is-hover .cursor-dot { width: 4px; height: 4px; }
 }
 .case-grid .body p { margin: 0 0 20px; max-width: 60ch; line-height: 1.65; }
 .case-gallery {
-  display: grid; grid-template-columns: 2fr 1fr; gap: 24px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
   margin-bottom: 24px;
 }
-.case-gallery > div { aspect-ratio: 3/2; border-radius: 4px; overflow: hidden; }
+.case-gallery > div { aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; }
 .case-gallery > div:nth-child(2) { --placeholder-bg: #D6BAB6; }
 
 /* ---------- About ---------- */
