@@ -1,6 +1,12 @@
 // app.jsx — Lunelle Skincare promo: 2 IG square directions on a design canvas
 const { useState } = React;
 
+// Access globals from other scripts explicitly
+const { 
+  useTweaks, TweaksPanel, TweakSection, TweakText, TweakRadio, TweakSlider, TweakToggle,
+  DesignCanvas, DCSection, DCArtboard 
+} = window;
+
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "headline": "Quiet skin,\nloud glow.",
   "eyebrow": "NEW — Ceramide Edit",

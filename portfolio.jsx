@@ -1,6 +1,13 @@
 // portfolio.jsx — Aditi, editorial graphic design portfolio
 const { useState, useEffect, useRef } = React;
 
+// Access globals from tweaks-panel.jsx explicitly
+const { 
+  useTweaks, TweaksPanel, TweakSection, TweakRow,
+  TweakSlider, TweakToggle, TweakRadio, TweakSelect,
+  TweakText, TweakNumber, TweakColor, TweakButton 
+} = window;
+
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "#D04E7B",
   "displayFont": "Instrument Serif",
